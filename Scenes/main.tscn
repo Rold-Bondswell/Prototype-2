@@ -20,3 +20,4 @@ texture = ExtResource("1_whqva")
 [node name="Platform" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
 
 [node name="Player" parent="." instance=ExtResource("3_wmeeo")]
+position = Vector2(8, -296)
