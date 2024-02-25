@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bce8rpce1jhf0"]
+[gd_scene load_steps=5 format=3 uid="uid://bce8rpce1jhf0"]
 
 [ext_resource type="Texture2D" uid="uid://bqycr85hu6bk6" path="res://assets/sprites/Background/background_static.png" id="1_whqva"]
 [ext_resource type="PackedScene" uid="uid://7uweespc1d0g" path="res://Scenes/platform.tscn" id="2_kjvn1"]
 [ext_resource type="PackedScene" uid="uid://dyj40jn53q4e5" path="res://Scenes/player.tscn" id="3_wmeeo"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="4_tfglv"]
 
 [node name="World" type="Node2D" groups=["example"]]
 
@@ -21,3 +22,5 @@ texture = ExtResource("1_whqva")
 
 [node name="Player" parent="." instance=ExtResource("3_wmeeo")]
 position = Vector2(8, -296)
+script = ExtResource("4_tfglv")
+gravity = 502
