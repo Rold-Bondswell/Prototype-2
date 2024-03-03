@@ -23,4 +23,5 @@ texture = ExtResource("1_whqva")
 [node name="Player" parent="." instance=ExtResource("3_wmeeo")]
 position = Vector2(8, -296)
 script = ExtResource("4_tfglv")
-gravity = 502
+gravity = 1000
+jump_power = 300
