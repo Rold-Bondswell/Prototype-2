@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bce8rpce1jhf0"]
+[gd_scene load_steps=5 format=3 uid="uid://bc3wbdqb70817"]
 
 [ext_resource type="Texture2D" uid="uid://bqycr85hu6bk6" path="res://assets/sprites/Background/background_static.png" id="1_whqva"]
 [ext_resource type="PackedScene" uid="uid://7uweespc1d0g" path="res://Scenes/platform.tscn" id="2_kjvn1"]
@@ -23,5 +23,5 @@ texture = ExtResource("1_whqva")
 [node name="Player" parent="." instance=ExtResource("3_wmeeo")]
 position = Vector2(8, -296)
 script = ExtResource("4_tfglv")
-gravity = 1000
+gravity = 500
 jump_power = 300

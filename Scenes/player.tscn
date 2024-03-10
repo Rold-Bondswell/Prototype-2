@@ -1,10 +1,11 @@
-[gd_scene load_steps=48 format=3 uid="uid://dyj40jn53q4e5"]
+[gd_scene load_steps=49 format=3 uid="uid://dyj40jn53q4e5"]
 
 [ext_resource type="Texture2D" uid="uid://c8k6uten7w1i" path="res://assets/sprites/Player/player_death.png" id="1_u0wcp"]
 [ext_resource type="Texture2D" uid="uid://bq2uvoxncph4t" path="res://assets/sprites/Player/player_double_jump.png" id="2_px3ua"]
 [ext_resource type="Texture2D" uid="uid://cnyobi0gy4v1q" path="res://assets/sprites/Player/player_jump.png" id="3_l2au8"]
 [ext_resource type="Texture2D" uid="uid://bxiagvb57mwbg" path="res://assets/sprites/Player/player_run.png" id="4_slmab"]
 [ext_resource type="Texture2D" uid="uid://btjy1qb8odhi0" path="res://assets/sprites/Player/player_run_shoot.png" id="5_s5aey"]
+[ext_resource type="AudioStream" uid="uid://behbts485ry36" path="res://assets/sounds/jump.wav" id="6_uhwsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xajgs"]
 atlas = ExtResource("1_u0wcp")
@@ -222,7 +223,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kiiib")
 }],
-"loop": true,
+"loop": false,
 "name": &"double jump",
 "speed": 10.0
 }, {
@@ -251,9 +252,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xq556")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
-"speed": 50.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -322,9 +323,12 @@ scale = Vector2(0.5, 0.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kcn2x")
-animation = &"shoot"
+animation = &"jump"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 shape = SubResource("RectangleShape2D_hjf2l")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_uhwsl")
