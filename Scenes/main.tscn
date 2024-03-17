@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc3wbdqb70817"]
+[gd_scene load_steps=6 format=3 uid="uid://bc3wbdqb70817"]
 
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_tbvlf"]
 [ext_resource type="Texture2D" uid="uid://bqycr85hu6bk6" path="res://assets/sprites/Background/background_static.png" id="1_whqva"]
 [ext_resource type="PackedScene" uid="uid://7uweespc1d0g" path="res://Scenes/platform.tscn" id="2_kjvn1"]
 [ext_resource type="PackedScene" uid="uid://dyj40jn53q4e5" path="res://Scenes/player.tscn" id="3_wmeeo"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_tfglv"]
 
-[node name="World" type="Node2D" groups=["example"]]
+[node name="World" type="Node2D" node_paths=PackedStringArray("moving_enviorment") groups=["example"]]
+script = ExtResource("1_tbvlf")
+moving_enviorment = NodePath("Enviorment/Moving")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Backround" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-3, -4)
 texture = ExtResource("1_whqva")
 
 [node name="Enviorment" type="Node2D" parent="."]
@@ -19,9 +23,44 @@ texture = ExtResource("1_whqva")
 [node name="Moving" type="Node2D" parent="Enviorment"]
 
 [node name="Platform" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(3992, -43)
 
-[node name="Player" parent="." instance=ExtResource("3_wmeeo")]
+[node name="Platform7" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(3365, 203)
+
+[node name="Platform8" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(3390, -314)
+
+[node name="Platform9" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(2832, -89)
+
+[node name="Platform10" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(2146, -235)
+
+[node name="Platform11" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(1225, 267)
+
+[node name="Platform12" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(673, 464)
+
+[node name="Platform6" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(1714, 25)
+
+[node name="Platform4" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(1247, -280)
+
+[node name="Platform5" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(848, -144)
+
+[node name="Platform2" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(372, 4)
+
+[node name="Platform3" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
+position = Vector2(186, 12)
+
+[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_wmeeo")]
 position = Vector2(8, -296)
 script = ExtResource("4_tfglv")
 gravity = 500
 jump_power = 300
+camera = NodePath("../Camera2D")

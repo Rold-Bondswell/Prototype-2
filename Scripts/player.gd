@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
+
+
 @export var gravity = 1
-@export var jump_power = 1
+@export var jump_power = 15
+@export var camera: Camera2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var jump_sound = $JumpSound
@@ -18,7 +21,9 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 
 	if active:
+		#updating the camera position so that it makes the character looks like it is moving
 		#handle jumping
+		camera.position = position
 		
 		if was_jumping and is_on_floor ():
 			was_jumping = false
