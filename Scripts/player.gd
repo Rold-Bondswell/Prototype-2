@@ -15,7 +15,7 @@ var was_jumping = false
 var jump_pitch = 1.0
 
 func _ready():
-	print("hello world")                     
+	print("holla amigo")                     
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
