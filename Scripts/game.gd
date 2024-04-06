@@ -14,21 +14,22 @@ func _ready():
 func _process(delta):
 	#check to see if we need to sp=awn a new platform
 	if Time.get_ticks_msec() > next_spawn_time:
-		var new_platform = platform.instanciate()
+		_spawn_next_platform() #refactoring
+
+func _spawn_next_platform ():
+	var new_platform = platform.instanciate()
 		
 		# I am going to add randomly placed platforms
-		if last_platform_position == Vector2.ZERO:
-			new_platform.position = Vector2(400,0)
-		else:
-			var x = last_platform_position.x + rng.randi_range(450, 550)
-			var y = last_platform_position.y + rng.randi_range(-150, 150)
-			new_platform.position = Vector2(x, y)
-			
-		moving_enviorment.add_child(new_platform)
-		last_platform_position = new_platform.position
-		next_spawn_time += world_speed
-
-
+	if last_platform_position == Vector2.ZERO:
+		new_platform.position = Vector2(400,0)
+	else:
+		var x = last_platform_position.x + rng.randi_range(450, 550)
+		var y = last_platform_position.y + rng.randi_range(-150, 150)
+		new_platform.position = Vector2(x, y)
+		
+	moving_enviorment.add_child(new_platform)
+	last_platform_position = new_platform.position
+	next_spawn_time += world_speed
 
 func _physics_process(delta):
 	
