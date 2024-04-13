@@ -17,7 +17,7 @@ func _process(delta):
 		_spawn_next_platform() #refactoring
 
 func _spawn_next_platform ():
-	var new_platform = platform.instanciate()
+	var new_platform = platform.instantiate()
 		
 		# I am going to add randomly placed platforms
 	if last_platform_position == Vector2.ZERO:

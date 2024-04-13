@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc3wbdqb70817"]
+[gd_scene load_steps=7 format=3 uid="uid://bc3wbdqb70817"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_tbvlf"]
 [ext_resource type="Texture2D" uid="uid://bqycr85hu6bk6" path="res://assets/sprites/Background/background_static.png" id="1_whqva"]
 [ext_resource type="PackedScene" uid="uid://7uweespc1d0g" path="res://Scenes/platform.tscn" id="2_kjvn1"]
 [ext_resource type="PackedScene" uid="uid://dyj40jn53q4e5" path="res://Scenes/player.tscn" id="3_wmeeo"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_tfglv"]
+[ext_resource type="PackedScene" uid="uid://wg4i2l0q2oyt" path="res://Scenes/collectible.tscn" id="6_0camp"]
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("moving_enviorment") groups=["example"]]
 script = ExtResource("1_tbvlf")
@@ -25,9 +26,12 @@ texture = ExtResource("1_whqva")
 [node name="Platform" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
 position = Vector2(51, 8)
 
-[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_wmeeo")]
-position = Vector2(8, 8)
+[node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_wmeeo")]
+position = Vector2(64, -224)
 script = ExtResource("4_tfglv")
 gravity = 500
 jump_power = 300
 camera = NodePath("../Camera2D")
+
+[node name="Collectible" parent="." instance=ExtResource("6_0camp")]
+position = Vector2(28, -91)
