@@ -11,7 +11,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		game.add_score(value)
 		sprite.play("collected")
-		sprite.animation_finish.connect(_on_animation_finished)
+		sprite.animation_finished.connect(_on_animation_finished)
 
 func _on_animation_finished():
 	queue_free()
