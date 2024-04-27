@@ -25,26 +25,10 @@ texture = ExtResource("1_whqva")
 [node name="Moving" type="Node2D" parent="Enviorment"]
 
 [node name="Platform" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
-position = Vector2(51, 8)
+position = Vector2(-3, 4)
 
 [node name="Collectible" parent="Enviorment/Moving" node_paths=PackedStringArray("game") instance=ExtResource("6_0camp")]
-position = Vector2(544, -112)
-game = NodePath("../../..")
-
-[node name="Collectible2" parent="Enviorment/Moving" node_paths=PackedStringArray("game") instance=ExtResource("6_0camp")]
-position = Vector2(174, -108)
-game = NodePath("../../..")
-
-[node name="Collectible3" parent="Enviorment/Moving" node_paths=PackedStringArray("game") instance=ExtResource("6_0camp")]
-position = Vector2(954, -114)
-game = NodePath("../../..")
-
-[node name="Collectible4" parent="Enviorment/Moving" node_paths=PackedStringArray("game") instance=ExtResource("6_0camp")]
-position = Vector2(744, -180)
-game = NodePath("../../..")
-
-[node name="Collectible5" parent="Enviorment/Moving" node_paths=PackedStringArray("game") instance=ExtResource("6_0camp")]
-position = Vector2(348, -186)
+position = Vector2(272, -116)
 game = NodePath("../../..")
 
 [node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_wmeeo")]
@@ -57,4 +41,35 @@ camera = NodePath("../Camera2D")
 [node name="Sounds" type="Node2D" parent="."]
 
 [node name="CollectSound" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2(192, -30)
 stream = ExtResource("7_bbadm")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="UI" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = -1.0
+offset_bottom = 9.0
+
+[node name="Score" type="Label" parent="HUD/UI"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1152.0
+offset_top = 18.0
+offset_right = 1246.0
+offset_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 35
+text = "Score: 1000"
+horizontal_alignment = 2
