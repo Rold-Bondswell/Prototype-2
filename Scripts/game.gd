@@ -5,8 +5,10 @@ extends Node2D
 @export var collectible_pitch_reset_interval = 2000
 
 @onready var collect_sound = $Sounds/CollectSound
+@onready var score_label = $HUD/UI/Score
 
 var platform = preload("res://Scenes/platform.tscn")
+var platform_collectable_single = preload("res://Scenes/platform_collectible_single.tscn")
 var rng = RandomNumberGenerator.new()
 var last_platform_position = Vector2.ZERO
 var next_spawn_time = 0
@@ -22,10 +24,16 @@ func _process(delta):
 	#check to see if we need to sp=awn a new platform
 	if Time.get_ticks_msec() > next_spawn_time:
 		_spawn_next_platform() #refactoring
+	score_label.text ="Score: %s" % score
+
 
 func _spawn_next_platform ():
-	var new_platform = platform.instantiate()
-		
+	var available_platforms = [
+		platform,
+		platform_collectable_single,
+		]
+	var random_platform = available_platforms.pick_random()
+	var new_platform = random_platform.instantiate()
 		# I am going to add randomly placed platforms
 	if last_platform_position == Vector2.ZERO:
 		new_platform.position = Vector2(400,0)

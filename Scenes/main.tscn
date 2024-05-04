@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bc3wbdqb70817"]
+[gd_scene load_steps=7 format=3 uid="uid://bc3wbdqb70817"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_tbvlf"]
 [ext_resource type="Texture2D" uid="uid://bqycr85hu6bk6" path="res://assets/sprites/Background/background_static.png" id="1_whqva"]
 [ext_resource type="PackedScene" uid="uid://7uweespc1d0g" path="res://Scenes/platform.tscn" id="2_kjvn1"]
 [ext_resource type="PackedScene" uid="uid://dyj40jn53q4e5" path="res://Scenes/player.tscn" id="3_wmeeo"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_tfglv"]
-[ext_resource type="PackedScene" uid="uid://wg4i2l0q2oyt" path="res://Scenes/collectible.tscn" id="6_0camp"]
 [ext_resource type="AudioStream" uid="uid://ol2sbhi5nciy" path="res://assets/sounds/collect.wav" id="7_bbadm"]
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("moving_enviorment") groups=["example"]]
@@ -26,10 +25,6 @@ texture = ExtResource("1_whqva")
 
 [node name="Platform" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
 position = Vector2(-3, 4)
-
-[node name="Collectible" parent="Enviorment/Moving" node_paths=PackedStringArray("game") instance=ExtResource("6_0camp")]
-position = Vector2(272, -116)
-game = NodePath("../../..")
 
 [node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_wmeeo")]
 position = Vector2(-195, -222)
