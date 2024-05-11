@@ -8,7 +8,9 @@ extends Node2D
 @onready var score_label = $HUD/UI/Score
 
 var platform = preload("res://Scenes/platform.tscn")
-var platform_collectable_single = preload("res://Scenes/platform_collectible_single.tscn")
+var platform_collectible_single = preload("res://Scenes/platform_collectible_single.tscn")
+var platform_collectible_rainbow = preload("res://Scenes/platform_collectible_rainbow.tscn")
+var platform_collectible_row = preload("res://Scenes/platform_collectible_row.tscn")
 var rng = RandomNumberGenerator.new()
 var last_platform_position = Vector2.ZERO
 var next_spawn_time = 0
@@ -30,7 +32,9 @@ func _process(delta):
 func _spawn_next_platform ():
 	var available_platforms = [
 		platform,
-		platform_collectable_single,
+		platform_collectible_single,
+		platform_collectible_row,
+		platform_collectible_rainbow
 		]
 	var random_platform = available_platforms.pick_random()
 	var new_platform = random_platform.instantiate()

@@ -9,6 +9,7 @@
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("moving_enviorment") groups=["example"]]
 script = ExtResource("1_tbvlf")
+world_speed = 325
 moving_enviorment = NodePath("Enviorment/Moving")
 
 [node name="Camera2D" type="Camera2D" parent="."]

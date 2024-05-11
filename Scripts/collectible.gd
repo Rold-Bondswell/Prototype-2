@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var value = 10
-@export var game: Node2D
+@onready var game = $"/root/World" # a collectable always has t obe connected to the world now
 @onready var sprite = $AnimatedSprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -16,5 +16,5 @@ position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_iyr7h")
 
 [node name="Collectible" parent="." instance=ExtResource("2_l4nd6")]
-position = Vector2(3, -89)
+position = Vector2(1, -91)
 scale = Vector2(0.5, 0.5)
