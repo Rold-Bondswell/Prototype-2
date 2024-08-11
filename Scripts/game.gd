@@ -42,7 +42,8 @@ func _spawn_next_platform ():
 	var new_platform = random_platform.instantiate()
 		# I am going to add randomly placed platforms
 	if last_platform_position == Vector2.ZERO:
-		new_platform.position = Vector2(400,0)
+		var y = last_platform_position.y + rng.randi_range(-150, 150)
+		new_platform.position = Vector2(400,y)
 	else:
 		var x = last_platform_position.x + rng.randi_range(450, 550)
 		var y = last_platform_position.y + rng.randi_range(-150, 150)
