@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://bacbbyissqtty"]
+[gd_scene load_steps=32 format=3 uid="uid://bacbbyissqtty"]
 
 [ext_resource type="Texture2D" uid="uid://dtbwwhuwuwxil" path="res://assets/sprites/Dino Enemy/dino_enemy_death.png" id="1_81v5o"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_pkqvm"]
 [ext_resource type="Texture2D" uid="uid://bax0aglyqh2jl" path="res://assets/sprites/Dino Enemy/dino_enemy_idle.png" id="2_5qp5v"]
 [ext_resource type="Texture2D" uid="uid://bd6odr8uje6to" path="res://assets/sprites/Dino Enemy/dino_enemy_walk.png" id="3_ouw4o"]
 
@@ -198,11 +199,12 @@ size = Vector2(201, 185)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
+script = ExtResource("1_pkqvm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -1)
 sprite_frames = SubResource("SpriteFrames_g6hxr")
-animation = &"death"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
