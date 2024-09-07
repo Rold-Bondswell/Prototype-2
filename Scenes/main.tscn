@@ -32,6 +32,7 @@ collision_mask = 4
 script = ExtResource("3_fubo0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviorment/Static/PlayArea"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_lo6wr")
 
 [node name="Moving" type="Node2D" parent="Enviorment"]
@@ -39,7 +40,7 @@ shape = SubResource("RectangleShape2D_lo6wr")
 [node name="Platform" parent="Enviorment/Moving" instance=ExtResource("2_kjvn1")]
 position = Vector2(-3, 4)
 
-[node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_wmeeo")]
+[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_wmeeo")]
 position = Vector2(-195, -222)
 script = ExtResource("4_tfglv")
 gravity = 500

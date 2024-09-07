@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var hitbox = $Hitbox
 @onready var player = $"/root/World/Player" 
-var active = true
+var active = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hitbox.body_entered.connect(_on_body_entered)

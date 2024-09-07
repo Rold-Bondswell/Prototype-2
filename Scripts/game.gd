@@ -6,6 +6,7 @@ extends Node2D
 
 @onready var collect_sound = $Sounds/CollectSound
 @onready var score_label = $HUD/UI/Score
+@onready var player = $Player
 
 var platform = preload("res://Scenes/platform.tscn")
 var platform_collectible_single = preload("res://Scenes/platform_collectible_single.tscn")
@@ -18,10 +19,18 @@ var next_spawn_time = 0
 var score = 0
 var collectible_pitch = 1.0
 var reset_collectible_pitch_time = 0
+
 func _ready():
 	rng.randomize()
+	player.player_died.connect(_on_player_died)
+	
+func _on_player_died():
+	print("on player died called")
+	
 	
 func _process(delta):
+	if not player.active:
+		return
 	if Time.get_ticks_msec() > reset_collectible_pitch_time:
 		collectible_pitch = 1.0
 	#check to see if we need to sp=awn a new platform
@@ -54,7 +63,8 @@ func _spawn_next_platform ():
 	next_spawn_time += world_speed
 
 func _physics_process(delta):
-	
+	if not player.active:
+		return
 	moving_enviorment.position.x -= world_speed * delta
 func add_score(value):
 	score += value
