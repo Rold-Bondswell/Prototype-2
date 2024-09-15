@@ -10,11 +10,15 @@ var active = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hitbox.body_entered.connect(_on_body_entered)
+	player.player_died.connect(_on_player_died)
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and active:
 		player.die()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _on_player_died():
+	set_active(false)
+
 func _process(delta):
 	pass
 
@@ -33,3 +37,5 @@ func set_active(value):
 	active = value
 	if active:
 		sprite.play("walk")
+	else:
+		sprite.play("idle")

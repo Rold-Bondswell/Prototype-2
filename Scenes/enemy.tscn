@@ -195,7 +195,7 @@ animations = [{
 size = Vector2(160, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pp6i5"]
-size = Vector2(160, 200)
+size = Vector2(160, 189)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -215,5 +215,5 @@ shape = SubResource("RectangleShape2D_1o7p8")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-16, 20)
+position = Vector2(-16, 25.5)
 shape = SubResource("RectangleShape2D_pp6i5")

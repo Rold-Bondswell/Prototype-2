@@ -7,6 +7,7 @@ extends Node2D
 @onready var collect_sound = $Sounds/CollectSound
 @onready var score_label = $HUD/UI/Score
 @onready var player = $Player
+@onready var play_area = $Enviorment/Static/PlayArea
 
 var platform = preload("res://Scenes/platform.tscn")
 var platform_collectible_single = preload("res://Scenes/platform_collectible_single.tscn")
@@ -23,10 +24,13 @@ var reset_collectible_pitch_time = 0
 func _ready():
 	rng.randomize()
 	player.player_died.connect(_on_player_died)
+	play_area.body_exited.connect(_on_body_exited)
 	
 func _on_player_died():
 	print("on player died called")
 	
+func _on_body_exited():
+	pass
 	
 func _process(delta):
 	if not player.active:
