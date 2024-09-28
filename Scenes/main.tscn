@@ -28,7 +28,7 @@ texture = ExtResource("1_whqva")
 
 [node name="PlayArea" type="Area2D" parent="Enviorment/Static"]
 collision_layer = 4097
-collision_mask = 4
+collision_mask = 6
 script = ExtResource("3_fubo0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviorment/Static/PlayArea"]
@@ -82,3 +82,24 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 35
 text = "Score: 1000"
 horizontal_alignment = 2
+
+[node name="GameOver" type="Label" parent="HUD/UI/Score"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = 145.0
+offset_right = 128.0
+offset_bottom = 499.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 30
+text = "Game Over!
+Points: %s
+Press \"jump\" to restart"
+vertical_alignment = 1

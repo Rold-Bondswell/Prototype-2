@@ -8,6 +8,7 @@ extends Node2D
 @onready var score_label = $HUD/UI/Score
 @onready var player = $Player
 @onready var play_area = $Enviorment/Static/PlayArea
+@onready var game_over_label = $HUD/UI/Score/GameOver
 
 var platform = preload("res://Scenes/platform.tscn")
 var platform_collectible_single = preload("res://Scenes/platform_collectible_single.tscn")
@@ -28,10 +29,11 @@ func _ready():
 	
 func _on_player_died():
 	print("on player died called")
-	
+	game_over_label.text = game_over_label.text % score
+	game_over_label.set_visible(true)
 func _on_body_exited():
-	pass
-	
+	print ("You lost")
+
 func _process(delta):
 	if not player.active:
 		return
