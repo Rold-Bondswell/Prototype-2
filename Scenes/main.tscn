@@ -11,10 +11,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo6wr"]
 size = Vector2(1800, 1200)
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("moving_enviorment") groups=["example"]]
+[node name="World" type="Node2D" node_paths=PackedStringArray("moving_enviorment", "play_area") groups=["example"]]
 script = ExtResource("1_tbvlf")
 world_speed = 325
 moving_enviorment = NodePath("Enviorment/Moving")
+play_area = NodePath("Enviorment/Static/PlayArea")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -27,7 +28,6 @@ texture = ExtResource("1_whqva")
 [node name="Static" type="Node2D" parent="Enviorment"]
 
 [node name="PlayArea" type="Area2D" parent="Enviorment/Static"]
-collision_layer = 4097
 collision_mask = 6
 script = ExtResource("3_fubo0")
 

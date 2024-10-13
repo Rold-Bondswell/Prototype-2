@@ -3,11 +3,12 @@ extends Node2D
 @export var world_speed = 250
 @export var moving_enviorment: Node2D
 @export var collectible_pitch_reset_interval = 2000
+@export var play_area: Area2D
 
 @onready var collect_sound = $Sounds/CollectSound
 @onready var score_label = $HUD/UI/Score
 @onready var player = $Player
-@onready var play_area = $Enviorment/Static/PlayArea
+#@onready var play_area = $Enviorment/Static/PlayArea
 @onready var game_over_label = $HUD/UI/Score/GameOver
 
 var platform = preload("res://Scenes/platform.tscn")
